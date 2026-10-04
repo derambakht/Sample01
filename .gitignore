@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# داده‌ها، مدل‌ها و گزارش‌ها حجیم‌اند و در گیت نمی‌روند
+data/*
+!data/.gitkeep
+outputs/
+reports/
+.gradio/

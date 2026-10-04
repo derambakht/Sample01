@@ -1,0 +1,23 @@
+# هسته
+numpy>=1.24
+soundfile>=0.12
+pyyaml>=6.0
+requests>=2.31
+pandas>=2.0
+jiwer>=3.0
+
+# دانلود (ffmpeg هم باید روی سیستم نصب باشد)
+yt-dlp>=2025.1.1
+
+# مدل و آموزش (برای GPU، اول torch مناسب CUDA خودت را از pytorch.org نصب کن)
+torch>=2.2
+transformers>=4.56
+accelerate>=1.0
+peft>=0.13
+tensorboard>=2.15
+
+# پنل
+gradio>=6.0
+
+# تست
+pytest>=8.0

@@ -1,0 +1,64 @@
+# ─────────────────────────────────────────────────────────────
+# مدل‌های قابل فاین‌تیون. پنل این فهرست و توضیح‌ها را نمایش می‌دهد.
+# vram_full: حافظه‌ی تقریبی GPU برای فاین‌تیون کامل با fp16 و batch 8 (همراه gradient checkpointing)
+# vram_lora: حافظه‌ی تقریبی با LoRA
+# ─────────────────────────────────────────────────────────────
+
+whisper-tiny:
+  model_id: openai/whisper-tiny
+  params: 39M
+  vram_full: "~2 GB"
+  vram_lora: "~1.5 GB"
+  learning_rate: 3.75e-5
+  description: >
+    کوچک‌ترین Whisper. روی CPU هم آموزش می‌بیند و برای امتحان سریع خط لوله عالی است،
+    ولی دقتش روی فارسی پایین است و بهبودش بیشتر از کیفیت واقعی نشان می‌دهد.
+
+whisper-base:
+  model_id: openai/whisper-base
+  params: 74M
+  vram_full: "~3 GB"
+  vram_lora: "~2 GB"
+  learning_rate: 2.5e-5
+  description: >
+    کمی بزرگ‌تر از tiny. اگر GPU نداری یا فقط Colab رایگان داری، انتخاب خوبی برای تمرین کلاس است.
+
+whisper-small:
+  model_id: openai/whisper-small
+  params: 244M
+  vram_full: "~8 GB"
+  vram_lora: "~5 GB"
+  learning_rate: 1.0e-5
+  recommended: true
+  description: >
+    پیشنهاد اصلی برای کلاس. روی GPU T4 کولب جا می‌شود، با ۳۰۰ تا ۸۰۰ کلیپ بهبود WER
+    به‌وضوح دیده می‌شود و زمان آموزش در حد ۳۰ تا ۶۰ دقیقه است.
+
+whisper-medium:
+  model_id: openai/whisper-medium
+  params: 769M
+  vram_full: "~20 GB"
+  vram_lora: "~10 GB"
+  learning_rate: 6.25e-6
+  description: >
+    دقت پایه‌ی بهتر روی فارسی. فاین‌تیون کامل GPU بزرگ می‌خواهد؛ روی T4 حتماً LoRA را روشن کن.
+
+whisper-large-v3-turbo:
+  model_id: openai/whisper-large-v3-turbo
+  params: 809M
+  vram_full: "~20 GB"
+  vram_lora: "~10 GB"
+  learning_rate: 5.0e-6
+  description: >
+    نسخه‌ی سریع large-v3 با دیکودر ۴ لایه. دقت نزدیک به large با سرعت چند برابر؛
+    برای فاین‌تیون جدی با LoRA گزینه‌ی خوبی است.
+
+whisper-large-v3:
+  model_id: openai/whisper-large-v3
+  params: 1550M
+  vram_full: "~40 GB"
+  vram_lora: "~16 GB"
+  learning_rate: 4.0e-6
+  description: >
+    دقیق‌ترین مدل؛ بیشتر برای برچسب‌گذاری اولیه‌ی داده مناسب است. فاین‌تیونش فقط با LoRA و GPU قوی منطقی است
+    و چون پایه‌اش قوی است، بهبود لهجه کمتر به چشم می‌آید.
